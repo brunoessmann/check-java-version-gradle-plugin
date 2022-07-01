@@ -4,13 +4,13 @@ The `check-java-version` Gradle plugin is a settings plugin that ensures that
 the Java version used to execute your Gradle build is in a certain range. 
 
 Ever wondered why your build fails only to find an inconspicuous 
-`unsupported class file version` buried in pages of log file output?
-Often it is not even your own project that brings the dependency, but a third
-party library that is only available from a certain Java VM version.
+`unsupported class file version` buried in pages of build output?
+Often it is not even your own project, but a third party library that has a
+dependency on a minimum Java version.
 
-Sounds familiar? Then this simple plugin might be for you or your team. The 
-purpose of this plugin is to abort the build with a big friendly, easy to spot
-message if you are not using the correct Java version:
+Sounds familiar? Then this simple plugin might be for you. The sole purpose 
+of this plugin is to abort the build with a big friendly and easy to spot
+message if you are not using the intended Java version:
 
 ```
          )))      *****************************        )))
@@ -25,7 +25,7 @@ FAILURE: Build failed with an exception.
 Build requires Java 17, active version is 8
 ```
 
-That's all that this settings plugin does, nothing more, nothing less.
+That's all that this plugin does, nothing more, nothing less.
 
 At first glance this is not very useful, but whenever a new team member cannot
 build a project because of a legacy Java version it might come in handy. It 
@@ -35,6 +35,9 @@ So, if this plugin at some point saves you a couple of minutes, then the
 inclusion in your build has already been worthwhile.
 
 ## Usage
+
+To use this plugin simply include it in the plugins block of your settings
+and configure the Java version you need in the `checkJavaVersion` block.
 
 Please note, this is a _settings plugin_ and not a project plugin, therefore 
 the declaration is done in the _settings_ file.
