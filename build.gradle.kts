@@ -31,9 +31,9 @@ group = "ch.essmann.gradle"
 version = 1
 
 pluginBundle {
-    website = "https://git.essmann.ch/gradle/check-java-gradle-plugin"
-    vcsUrl = "ssh://git@git.essmann.ch:30001/gradle/check-java-gradle-plugin.git"
-    tags = listOf("java", "version")
+    website = "https://github.com/brunoessmann/check-java-version-gradle-plugin"
+    vcsUrl = "https://github.com/brunoessmann/check-java-version-gradle-plugin.git"
+    tags = listOf("java", "check", "version")
 }
 
 gradlePlugin {
@@ -41,8 +41,16 @@ gradlePlugin {
         create("checkjava") {
             id = "ch.essmann.gradle.check-java-version"
             implementationClass = "ch.essmann.gradle.checkjava.CheckJavaVersionPlugin"
-            displayName = "Checks that Gradle is running with the correct Java version"
-            description = "Checks the Java version before starting the Gradle build"
+            displayName = "A plugin that ensures that the Java version used to execute your Gradle build is in a certain range."
+            description = """
+                This plugin checks the Java version your Gradle build is running with.
+                
+                If the version is lower than the required minimum version or it exceeds the maximum version accepted, 
+                then the build is aborted with an friendly, easy to spot error message pointing towards the problem.
+                
+                This should help to avoid having to dig through the build output to find only to find an unsupported class 
+                file version error messages buried somehere in the output due to a bad Java runtime version.
+            """.trimIndent()
         }
     }
 }
