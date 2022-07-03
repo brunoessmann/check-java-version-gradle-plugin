@@ -46,7 +46,7 @@ gradlePlugin {
                 This plugin checks the Java version your Gradle build is running with.
                 
                 If the version is lower than the required minimum version or it exceeds the maximum version accepted, 
-                then the build is aborted with an friendly, easy to spot error message pointing towards the problem.
+                then the build is aborted with a friendly, easy to spot error message pointing towards the problem.
                 
                 This should help to avoid having to dig through the build output to find only to find an unsupported class 
                 file version error messages buried somehere in the output due to a bad Java runtime version.
