@@ -1,9 +1,9 @@
 # Check Java Version Gradle Plugin
 
-[![Join the chat at https://kotlinlang.slack.com](https://img.shields.io/badge/slack-@kotlinlang/ktlint-yellow.svg?logo=slack)](https://kotlinlang.slack.com/)
 [![Build Status](https://github.com/brunoessmann/check-java-version-gradle-plugin/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/brunoessmann/check-java-version-gradle-plugin/actions)
-[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 [![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/ch/essmann/gradle/check-java-version/ch.essmann.gradle.check-java-version.gradle.plugin/maven-metadata.xml.svg?colorB=007ec6&label=gradlePluginPortal)](https://plugins.gradle.org/plugin/ch.essmann.gradle.check-java-version)
+[![Kotlinlang Slack Chat](https://img.shields.io/badge/slack-@kotlinlang-yellow.svg?logo=slack)](https://kotlinlang.slack.com/)
+[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
 
 https://plugins.gradle.org/plugin/ch.essmann.gradle.check-java-version
 
