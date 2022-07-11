@@ -1,5 +1,12 @@
 # Check Java Version Gradle Plugin
 
+[![Join the chat at https://kotlinlang.slack.com](https://img.shields.io/badge/slack-@kotlinlang/ktlint-yellow.svg?logo=slack)](https://kotlinlang.slack.com/)
+[![Build Status](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)](https://github.com/brunoessmann/check-java-version-gradle-plugin/actions)
+[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://ktlint.github.io/)
+[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/ch/essmann/gradle/check-java-version/ch.essmann.gradle.check-java-version.gradle.plugin/maven-metadata.xml.svg?colorB=007ec6&label=gradlePluginPortal)](https://plugins.gradle.org/plugin/ch.essmann.gradle.check-java-version)
+
+https://plugins.gradle.org/plugin/ch.essmann.gradle.check-java-version
+
 The `check-java-version` Gradle plugin is a settings plugin that ensures that
 the Java version used to execute your Gradle build is in a certain range. 
 
@@ -87,6 +94,9 @@ The Java version has to be specified as
 [language version](https://docs.gradle.org/current/javadoc/org/gradle/jvm/toolchain/JavaLanguageVersion.html),
 e.g. [`JavaLanguageVersion.of(11)`](https://docs.gradle.org/current/javadoc/org/gradle/jvm/toolchain/JavaLanguageVersion.html).
 
+*Note:* Only the major language version number is supported. You can't check
+for minor versions using this plugin.
+
 ## Java Toolchain Support
 
 Please note that this plugin does not have any relation to the Java toolchain
@@ -101,29 +111,9 @@ toolchain support language version as desired. Higher Java versions are in
 most circumstances perfectly capable of compiling compatible versions for 
 lower Java versions.
 
-References:
+## References
+
+- [Gradle Plugin Portal](https://plugins.gradle.org/plugin/ch.essmann.gradle.check-java-version)
 - [Gradle Java extension and java toolchain languageVersion](https://docs.gradle.org/current/userguide/java_plugin.html#sec:java-extension)
 - [Toolchain support for JVM projects](https://docs.gradle.org/current/userguide/toolchains.html)
 - [Kotlin Gradle Java toolchain support](https://kotlinlang.org/docs/gradle.html#gradle-java-toolchains-support)
-
-## Plugin Development
-
-Some notes about maintaining this plugin itself.
-
-- At the time of this writing (Gradle 7.5-rc-2) does not support extensions
-  in the settings file automatically. There is a "helper function" defined in
-  `org/gradle/kotlin/dsl/CheckJavaVersion.kt` that enables it.
-- To deploy to a local maven repository for testing add the following block
-  at the top of your settings file:
-```
-pluginManagement {
-  repositories {
-    gradlePluginPortal()
-    mavenLocal()
-  }
-}
-```
-- Then build and deploy locally using `./gradlew clean build publishToMavenLocal`
-- To release a new version adjust `version` in the `build.gradle.kts`,
-  commit the changes, add a tag for the version and push it to the repo.
-  Then build and release it.
